@@ -17,8 +17,6 @@ public class BombController : MonoBehaviour
 
     private void Update() {
         if(Input.GetKeyDown(inputKey) && bomsRemaining > 0) {
-            //bomsRemaining--;
-            //StartCoroutine(Explode());
             StartCoroutine(PlaceBom());
         }
     }
