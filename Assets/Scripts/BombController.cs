@@ -24,8 +24,8 @@ public class BombController : MonoBehaviour
     private IEnumerator PlaceBom(){
         Vector2 position = transform.position;
 
-        position.x = Mathf.Round(position.x);
-        position.y = Mathf.Round(position.y);
+        position.x = Mathf.Round(position.x) + 0.5f;
+        position.y = Mathf.Round(position.y) + 0.5f;
 
         GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
         bomsRemaining--;

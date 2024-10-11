@@ -17,6 +17,7 @@ public class MovementController : MonoBehaviour
     public AnimatedSprite spriteDown;
     public AnimatedSprite spriteLeft;
     public AnimatedSprite spriteRight;
+    public AnimatedSprite spriteDeath;
     private AnimatedSprite defaultSprite;
 
     void Awake()
@@ -70,5 +71,33 @@ public class MovementController : MonoBehaviour
 
         defaultSprite = selectedSprite;
         defaultSprite.idle = direction == Vector2.zero;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
+            DeathSequence();
+        }
+    }
+
+    private void DeathSequence()
+    {
+        enabled = false;
+        GetComponent<BombController>().enabled = false;
+
+        spriteUp.enabled = false;
+        spriteDown.enabled = false;
+        spriteLeft.enabled = false;
+        spriteRight.enabled = false;
+        spriteDeath.enabled = true;
+
+        Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+    }
+
+    private void OnDeathSequenceEnded()
+    {
+        gameObject.SetActive(false);
+        GameManager.Instance.CheckWinState();
     }
 }
