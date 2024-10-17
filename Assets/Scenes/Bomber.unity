@@ -1775,13 +1775,15 @@ MonoBehaviour:
   bombPrefab: {fileID: 7877315439216754528, guid: 6418866ae15fb0c48a84756823e0495f, type: 3}
   inputKey: 32
   bomFuseTime: 3
-  bomAmount: 1
+  bomAmount: 5
   explosionPrefab: {fileID: -4370304731394422093, guid: 7d1ed0eacb171eb4aba65301e8e13c04, type: 3}
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 64
   explosionDuration: 1
   explosionRadius: 1
+  destructibleTiles: {fileID: 647096089}
+  destructiblePrefab: {fileID: 1677085663992451392, guid: 9d598f2f334bf1d4388d4b61bc6bd6f8, type: 3}
 --- !u!1 &1629614023
 GameObject:
   m_ObjectHideFlags: 0
