@@ -1654,7 +1654,7 @@ GameObject:
   - component: {fileID: 1516402807}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1752,6 +1752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee80f6be42e799d4aa889e0579951e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
   inputUp: 273
   inputDown: 274
   inputLeft: 276
@@ -1775,7 +1776,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 7877315439216754528, guid: 6418866ae15fb0c48a84756823e0495f, type: 3}
   inputKey: 32
   bomFuseTime: 3
-  bomAmount: 5
+  bomAmount: 1
   explosionPrefab: {fileID: -4370304731394422093, guid: 7d1ed0eacb171eb4aba65301e8e13c04, type: 3}
   explosionLayerMask:
     serializedVersion: 2
