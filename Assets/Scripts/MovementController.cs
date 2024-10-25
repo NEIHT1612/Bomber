@@ -6,7 +6,7 @@ public class MovementController : MonoBehaviour
 {
     public Rigidbody2D rigidbody { get; private set; }
     private Vector2 direction = Vector2.down;
-    private float speed = 5f;
+    public float speed = 5f;
 
     public KeyCode inputUp = KeyCode.UpArrow;
     public KeyCode inputDown = KeyCode.DownArrow;

@@ -1762,7 +1762,7 @@ GameObject:
   - component: {fileID: 1516402807}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1861,6 +1861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee80f6be42e799d4aa889e0579951e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
   inputUp: 273
   inputDown: 274
   inputLeft: 276
@@ -1892,6 +1893,8 @@ MonoBehaviour:
     m_Bits: 64
   explosionDuration: 1
   explosionRadius: 1
+  destructibleTiles: {fileID: 647096089}
+  destructiblePrefab: {fileID: 1677085663992451392, guid: 9d598f2f334bf1d4388d4b61bc6bd6f8, type: 3}
 --- !u!1 &1629614023
 GameObject:
   m_ObjectHideFlags: 0
