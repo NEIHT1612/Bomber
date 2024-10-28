@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
@@ -20,6 +21,9 @@ public class MovementController : MonoBehaviour
     public AnimatedSprite spriteRight;
     public AnimatedSprite spriteDeath;
     private AnimatedSprite defaultSprite;
+
+    [Header("Statistic")]
+    public TMP_Text speedText;
 
     void Awake()
     {
@@ -59,6 +63,7 @@ public class MovementController : MonoBehaviour
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
 
         rigidbody.MovePosition(position + translation);
+        UpdateStatistic(speed);
     }
 
     void SetDirection(Vector2 newDirection, AnimatedSprite selectedSprite)
@@ -100,5 +105,15 @@ public class MovementController : MonoBehaviour
     {
         gameObject.SetActive(false);
         FindObjectOfType<GameManager>().CheckWinState();
+    }
+
+    private void Start()
+    {
+        UpdateStatistic(speed);
+    }
+
+    private void UpdateStatistic(float speed)
+    {
+        speedText.text = "Speed: " + speed.ToString();
     }
 }

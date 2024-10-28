@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -22,6 +23,10 @@ public class BombController : MonoBehaviour
     [Header("Destructible")]
     public Tilemap destructibleTiles;
     public Destructible destructiblePrefab;
+
+    [Header("Statistic")]
+    public TMP_Text bombAmountText;
+    public TMP_Text bombRadiusText;
 
     private void OnEnable() {
         bomsRemaining = bomAmount;
@@ -95,5 +100,20 @@ public class BombController : MonoBehaviour
     {
         bomAmount++;
         bomsRemaining++;
+    }
+
+    private void Start()
+    {
+        UpdateStatistic(bomAmount, explosionRadius);
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateStatistic(bomAmount, explosionRadius);
+    }
+    private void UpdateStatistic(int bombAmount, int bombRadius)
+    {
+        bombAmountText.text = "Bomb Amount: " + bombAmount.ToString();
+        bombRadiusText.text = "Range Bomb: " + bombRadius.ToString();
     }
 }
