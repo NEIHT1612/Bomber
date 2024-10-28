@@ -10,6 +10,16 @@ public class Play : MonoBehaviour
 
     public void Play_Game()
     {
+        SceneManager.LoadScene(2);
+    }
+
+    public void Play_Instruction()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Game_Start()
+    {
         SceneManager.LoadScene(0);
     }
 }
