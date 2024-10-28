@@ -32,7 +32,7 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Player"))
+        if (collider.CompareTag("Player1") || collider.CompareTag("Player2"))
         {
             OnItemPickup(collider.gameObject);
         }
